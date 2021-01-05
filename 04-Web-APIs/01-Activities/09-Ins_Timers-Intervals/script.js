@@ -8,7 +8,7 @@ var secondsLeft = 10;
 
 function setTime() {
   // Sets interval in variable
-  const myFunc = function() {
+  var timerInterval = setInterval(function() {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
 
@@ -19,8 +19,7 @@ function setTime() {
       sendMessage();
     }
 
-  } 
-  var timerInterval = setInterval(myFunc, 1000);
+  }, 1000);
 }
 
 // Function to create and append colorsplosion image

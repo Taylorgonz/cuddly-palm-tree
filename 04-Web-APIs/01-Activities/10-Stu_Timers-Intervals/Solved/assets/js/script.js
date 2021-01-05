@@ -1,6 +1,11 @@
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
-
+const millisecondsPerWord = parseInt(prompt("How many milliseconds per word?"));
+if (isNaN(millisecondsPerWord) || millisecondsPerWord < 0) {
+  alert("Invalid milliseconds provided. Please reload the page and try again.");
+  // not best case, but prevents rest of code from executing
+  throw new Error("invalid milliseconds provided, exiting.");
+}
 var message =
   'Some say the world will end in 🔥, Some say in ice. From what I’ve tasted of desire, I hold with those who favor fire. But if it had to perish twice, I think I know enough of hate. To say that for destruction ice, Is also great, And would suffice.';
 var words = message.split(' ');
@@ -33,8 +38,9 @@ function countdown() {
 }
 
 function speedRead() {
+  let i = 0;
   // Append mainEl div
-  mainEl.appendChild(bodyEl);
+  mainEl.appendChild(timerEl);
   // Set interval in a variable
   var poemInterval = setInterval(function() {
     if (words[i] === undefined) {
@@ -50,4 +56,4 @@ function speedRead() {
   }, millisecondsPerWord);
 }
 
-prepareRead();
+speedRead();

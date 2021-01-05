@@ -21,10 +21,3 @@ site3El.children[1].children[0].setAttribute("alt", "women working");
 site3El.children[1].children[0].setAttribute("style", "padding:10px;");
 
 // Write Your Code Below
-let htag = document.querySelectorAll("h4");
-
-// loop to set h4 style, color, and font size.
-for (var i = 0; i < htag.length; i++) {
-    htag[i].setAttribute("style", "color:blue; font-size: 30px; font-weight: bold; padding-left: 10px; margin: 0px;");
-   }
-  
