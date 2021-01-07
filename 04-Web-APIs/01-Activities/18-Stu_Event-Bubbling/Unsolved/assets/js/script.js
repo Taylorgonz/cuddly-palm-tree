@@ -1,6 +1,8 @@
 // TODO: Which element is the following line of code selecting?
+// The div that will display the carousel images
 var carousel = document.querySelector(".carouselbox");
 // TODO: Which element is the following line of code selecting?
+// the next and previous buttons using the parent carousel element
 var next = carousel.querySelector(".next");
 var prev = carousel.querySelector(".prev");
 var index = 0;
@@ -27,21 +29,26 @@ function navigate(direction) {
 }
 
 // TODO: Describe the functionality of the following event listener.
+// clicking on the image opens a new window containing the image
 carousel.addEventListener("click", function() {
   window.location.href = images[index];
 });
 
 // TODO: Describe the functionality of the following event listener.
+// goes to the next photo in the carousel
 next.addEventListener("click", function(event) {
   // TODO: What is the purpose of the following line of code?
+  // it keeps the photo from bubbling up and new window opening
   event.stopPropagation();
 
   navigate(1);
 });
 
 // TODO: Describe the functionality of the following event listener.
+// goes to the previous photo in the carousel
 prev.addEventListener("click", function(event) {
     // TODO: What would happen if we didn't add the following line of code?
+    // event bubbling and a new window would open with the image.
   event.stopPropagation();
 
   navigate(-1);
