@@ -7,7 +7,7 @@ imageContainer.addEventListener("click", function(event) {
     var state = element.getAttribute("data-state");
 
     if (state === "still") {
-      element.dataset.state = "animate";
+      element.database.state = "animate";
       element.setAttribute("data-state", "animate");
       element.setAttribute("src", element.dataset.animate);
     } else {
